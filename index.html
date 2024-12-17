@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classic Menu Example</title>
+    <style>
+        /* Basic styling for the menu bar */
+        .menu-bar {
+            background-color: #ddd;
+            display: flex;
+            padding: 5px;
+            border: 1px solid #aaa;
+        }
+
+        /* Menu item styles */
+        .menu-item {
+            position: relative; /* For positioning dropdown */
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #ccc;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #aaa;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .dropdown a:hover {
+            background-color: #eee;
+        }
+
+        /* Show dropdown when menu-item is hovered */
+        .menu-item:hover .dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-bar">
+        <div class="menu-item">
+            File
+            <div class="dropdown">
+                <a href="#">New</a>
+                <a href="#">Open</a>
+                <a href="#">Save</a>
+                <a href="#">Exit</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            Edit
+            <div class="dropdown">
+                <a href="#">Undo</a>
+                <a href="#">Redo</a>
+                <a href="#">Cut</a>
+                <a href="#">Copy</a>
+                <a href="#">Paste</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            Settings
+            <div class="dropdown">
+                <a href="#">Preferences</a>
+                <a href="#">Themes</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript can be used to enhance functionality (optional for basic menus)
+        // Example: Alert on clicking a menu option
+        const menuLinks = document.querySelectorAll('.dropdown a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                alert(`You clicked: ${link.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>
